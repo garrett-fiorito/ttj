@@ -21,7 +21,77 @@
         </nav>
     </header>
     <form id="add-job-form">
-        <fieldset id="job-info"></fieldset>
+        <fieldset id="job-info">
+                <legend>Basic Information</legend>
+                <label for="job-title">
+                    Job Title
+                    <input type="text" id="job-title" name="job-title">
+                </label>
+                <label for="job-title">
+                    Company
+                    <input type="text" id="job-company" name="job-company">
+                </label>
+                <label for="job-location">
+                    Location
+                    <input type="text" id="job-location" name="job-location">
+                </label>
+                <label for="job-post-date">
+                    Post Date
+                    <input type="text" id="job-post-date" name="job-post-date">
+                </label>
+                <label for="job-close-date">
+                    Close Date
+                    <input type="text" id="job-close-date" name="job-close-date">
+                </label>
+                <label for="job-trade">
+                    Trade
+                    <select id="job-trade" name="job-trade">
+                        <option>Select a trade...</option>
+                        <option value="Automotive">Automotive</option>
+                        <option value="Carpentry">Carpentry</option>
+                        <option value="Mechatronics">Mechatronics</option>
+                    </select>
+                </label>
+        </fieldset>
+        <fieldset id="job-type">
+            <legend>Employment Type</legend>
+            <label for="full-time">
+                <input type="radio" id="full-time" name="job-type" value="Full-time">
+                Full-time
+            </label>
+            <label for="part-time">
+                <input type="radio" id="part-time" name="job-type" value="Part-time">
+                Part-time
+            </label>
+            <label for="contract">
+                <input type="radio" id="contract" name="job-type" value="Contract">
+                Contract
+            </label>
+            <label for="seasonal">
+                <input type="radio" id="seasonal" name="job-type" value="Seasonal">
+                Seasonal
+            </label>
+            <label for="internship">
+                <input type="radio" id="internship" name="job-type" value="Internship">
+                Internship
+            </label>
+        </fieldset>
+        <fieldset id="job-additional-info">
+            <legend>Additional information</legend>
+            <label for="job-is-paid">
+                <input type="checkbox" id="job-is-paid">
+                This position is paid
+            </label>
+            <label for="job-wage">
+                Compensation details (if applicable)
+                <input type="text" id="job-wage" name="job-wage">
+            </label>
+            <label for="job-description">
+                Job description
+                <textarea id="job-description" name="job-description" rows="6" maxlength="400" placeholder="Briefly describe the role..."></textarea>
+            </label>
+        </fieldset>
+        <button type="submit" id="submit-job-button">Add Job</button>
     </form>
 </body>
 </html>
