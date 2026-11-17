@@ -20,5 +20,19 @@
             </ul>
         </nav>
     </header>
+    <h2>Job created!</h2>
+    <h3>Basic Information</h3>
+    <p>Job Title: <%= job.title %></p>
+    <p>Company: <%= job.company %></p>
+    <p>Location: <%= job.location %></p>
+    <p>Post Date: <%= job.post_date %></p>
+    <p>Close Date: <%= job.close_date %></p>
+    <p>Trade: <%= job.trade %></p>
+    <p>Employment Type: <%= job.type%></p>
+    <p>Paid: <%= job.is_paid ? 'Yes' : 'No' %></p>
+    <% if (job.is_paid === 1) { %>
+        <p>Compensation: <%= job.compensation %></p>
+    <% } %>
+    <p>Description: <%= job.description %></p>
 </body>
 </html>
