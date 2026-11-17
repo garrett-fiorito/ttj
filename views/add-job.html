@@ -20,32 +20,33 @@
             </ul>
         </nav>
     </header>
+    <h1>Add Job</h1>
     <form id="add-job-form">
         <fieldset id="job-info">
                 <legend>Basic Information</legend>
-                <label for="job-title">
+                <label for="title">
                     Job Title
-                    <input type="text" id="job-title" name="job-title">
+                    <input type="text" id="title" name="title">
                 </label>
-                <label for="job-title">
+                <label for="company">
                     Company
-                    <input type="text" id="job-company" name="job-company">
+                    <input type="text" id="company" name="company">
                 </label>
-                <label for="job-location">
+                <label for="location">
                     Location
-                    <input type="text" id="job-location" name="job-location">
+                    <input type="text" id="location" name="location">
                 </label>
-                <label for="job-post-date">
+                <label for="post-date">
                     Post Date
-                    <input type="text" id="job-post-date" name="job-post-date">
+                    <input type="text" id="post-date" name="post-date">
                 </label>
-                <label for="job-close-date">
+                <label for="close-date">
                     Close Date
-                    <input type="text" id="job-close-date" name="job-close-date">
+                    <input type="text" id="close-date" name="close-date">
                 </label>
-                <label for="job-trade">
+                <label for="trade">
                     Trade
-                    <select id="job-trade" name="job-trade">
+                    <select id="trade" name="trade">
                         <option>Select a trade...</option>
                         <option value="Automotive">Automotive</option>
                         <option value="Carpentry">Carpentry</option>
@@ -56,39 +57,39 @@
         <fieldset id="job-type">
             <legend>Employment Type</legend>
             <label for="full-time">
-                <input type="radio" id="full-time" name="job-type" value="Full-time">
+                <input type="radio" id="full-time" name="type" value="Full-time">
                 Full-time
             </label>
             <label for="part-time">
-                <input type="radio" id="part-time" name="job-type" value="Part-time">
+                <input type="radio" id="part-time" name="type" value="Part-time">
                 Part-time
             </label>
             <label for="contract">
-                <input type="radio" id="contract" name="job-type" value="Contract">
+                <input type="radio" id="contract" name="type" value="Contract">
                 Contract
             </label>
             <label for="seasonal">
-                <input type="radio" id="seasonal" name="job-type" value="Seasonal">
+                <input type="radio" id="seasonal" name="type" value="Seasonal">
                 Seasonal
             </label>
             <label for="internship">
-                <input type="radio" id="internship" name="job-type" value="Internship">
+                <input type="radio" id="internship" name="type" value="Internship">
                 Internship
             </label>
         </fieldset>
-        <fieldset id="job-additional-info">
+        <fieldset id="additional-info">
             <legend>Additional information</legend>
-            <label for="job-is-paid">
-                <input type="checkbox" id="job-is-paid">
+            <label for="is-paid">
+                <input type="checkbox" id="is-paid">
                 This position is paid
             </label>
-            <label for="job-wage">
+            <label for="compensation">
                 Compensation details (if applicable)
-                <input type="text" id="job-wage" name="job-wage">
+                <input type="text" id="compensation" name="compensation">
             </label>
-            <label for="job-description">
+            <label for="description">
                 Job description
-                <textarea id="job-description" name="job-description" rows="6" maxlength="400" placeholder="Briefly describe the role..."></textarea>
+                <textarea id="description" name="description" rows="6" maxlength="400" placeholder="Briefly describe the role..."></textarea>
             </label>
         </fieldset>
         <button type="submit" id="submit-job-button">Add Job</button>
