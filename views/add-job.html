@@ -21,7 +21,7 @@
         </nav>
     </header>
     <h1>Add Job</h1>
-    <form id="add-job-form">
+    <form id="add-job-form" action="/submit-job" method="post">
         <fieldset id="job-info">
                 <legend>Basic Information</legend>
                 <label for="title">
@@ -38,11 +38,11 @@
                 </label>
                 <label for="post-date">
                     Post Date
-                    <input type="text" id="post-date" name="post-date">
+                    <input type="text" id="post_date" name="post_date">
                 </label>
                 <label for="close-date">
                     Close Date
-                    <input type="text" id="close-date" name="close-date">
+                    <input type="text" id="close_date" name="close_date">
                 </label>
                 <label for="trade">
                     Trade
@@ -79,8 +79,8 @@
         </fieldset>
         <fieldset id="additional-info">
             <legend>Additional information</legend>
-            <label for="is-paid">
-                <input type="checkbox" id="is-paid">
+            <label for="is_paid">
+                <input type="checkbox" id="is_paid">
                 This position is paid
             </label>
             <label for="compensation">
