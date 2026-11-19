@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/grc_logo_green.png" type="image/png">
+   
+    <script src="//code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/4.1.1/js/dataTables.responsive.min.js"></script>
+
+    <link rel="stylesheet" href="//cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+    <link href="https://cdn.datatables.net/responsive/4.1.1/css/responsive.dataTables.min.css" rel="stylesheet">
+ 
     <title>Home | Trades Job Board</title>
 </head>
 <body>
@@ -20,5 +28,67 @@
             </ul>
         </nav>
     </header>
+    <table id="job-table" class="display">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Trade</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Posting Date</th>
+                <th>Close Date</th>
+                <th>Employment Type</th>
+                <th>Internship</th>
+                <th>Paid</th>
+                <th>Compensation</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% jobs.forEach( job => { %>
+                <tr>
+                    <td><%= job.title %></td>
+                    <td><%= job.trade %></td>
+                    <td><%= job.company %></td>
+                    <td><%= job.location %></td>
+                    <td><%= job.post_date %></td>
+                    <td><%= job.close_date %></td>
+                    <td><%= job.type %></td>
+                    <td><%= job.internship ? 'Yes' : 'No' %></td>
+                    <td><%= job.is_paid ? 'Yes' : 'No' %></td>
+                    <td><%= job.compensation %></td>
+                    <td><a href='/view-job/<%= job.uuid %>'>View</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
 </body>
+<script>
+
+    function render_clean_dt(data, type, row) {
+        if (type === 'display' || type === 'filter') {
+            if (!data) return '';
+            const date = new Date(data);
+            return date.toLocaleDateString('en-US');
+        }
+        return data;
+    }
+
+    new DataTable('#job-table', {
+            responsive: true,
+            columns: [
+                null,
+                null,
+                null,
+                null,
+                {render: render_clean_dt},
+                {render: render_clean_dt},
+                null,
+                null,
+                null,
+                null,
+                null
+            ]
+        });
+</script>
 </html>

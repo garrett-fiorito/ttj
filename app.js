@@ -20,8 +20,9 @@ const pool = mysql2.createPool({
     port: process.env.DB_PORT
 }).promise();
 
-function get_root(req, res) {
-    res.render('index');
+async function get_root(req, res) {
+    let [jobs] = await pool.execute(`SELECT * FROM jobs`);
+    res.render('index', {jobs});
 }
 
 function get_add_job(req, res) {
