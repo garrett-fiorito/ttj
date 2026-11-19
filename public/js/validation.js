@@ -19,6 +19,8 @@ function formSubmit(event) {
                 errorElement.innerHTML += errorMessages[i] + "<br>";
             }
         }
+        let postingLinkValue = document.getElementById('posting_link').value.trim();
+        document.getElementById('posting_link').value = postingLinkValue.replace("https://", "").replace("http://", "");
     } catch (err) {
         console.log(err);
         event.preventDefault();
