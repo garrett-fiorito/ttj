@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg navbar-bg">
         <div class="container-fluid navbar-container d-flex flex-nowrap">
             <a class="navbar-brand d-flex flex-column align-items-center justify-content-start nav-link" href="/">
-                <img src="/img/grc_logo_white.png" width="97px">
+                <img src="/img/grc_logo_white.png" width="97" alt="GRC Logo">
                 Trades Job Board
             </a>
             <ul class="navbar-nav">
@@ -32,13 +32,13 @@
     </nav>
     <div class="container-fluid w-75">
         <h2>Add Job</h2>
-        <span><p id="err" class="text-danger"></p></span>
+        <p id="err" class="text-danger"></p>
         <form id="add-job-form" action="/submit-job" method="post">
             <fieldset id="job-info">
                 <legend>Basic Information</legend>
                 <div class="mb-1">
                     <label class="form-label" for="title">Job Title</label>
-                    <input class="form-control" type="text" class id="title" name="title" maxlength="100">
+                    <input class="form-control" type="text" id="title" name="title" maxlength="100">
                 </div>
                 <div class="mb-1">
                     <label class="form-label" for="company">Company</label>
