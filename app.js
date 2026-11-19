@@ -32,16 +32,17 @@ function get_add_job(req, res) {
 async function get_view_job(req, res) {
     console.log(req.params.job_id);
     const job_id = req.params.job_id;
-    let [result] = await pool.execute(`SELECT * FROM jobs WHERE uuid = ?`, [job_id]);
-    console.log(result);
-    if (!result?.length) {
+    let [job] = await pool.execute(`SELECT * FROM jobs WHERE uuid = ?`, [job_id]);
+    console.log(job);
+    if (!job?.length) {
         return res.status(400).send("<h1>Sorry, that job ID is invalid.</h1><p>Check the job ID and try again.</p>");
     }
-
+    job = job[0];
+    res.render('view-job', { job });
 }
 
 function handle_checkbox_field(f) {
-    return f ? 0 : 1;
+    return f ? 1 : 0;
 }
 
 async function save_job(req, res) {
