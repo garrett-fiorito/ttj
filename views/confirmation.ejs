@@ -28,6 +28,7 @@
     <p>Close Date: <%= job.close_date %></p>
     <p>Trade: <%= job.trade %></p>
     <p>Employment Type: <%= job.type%></p>
+    <p>Internship: <%= job.internship ? 'Yes' : 'No' %></p>
     <p>Paid: <%= job.is_paid ? 'Yes' : 'No' %></p>
     <% if (job.is_paid === 1) { %>
         <p>Compensation: <%= job.compensation %></p>
