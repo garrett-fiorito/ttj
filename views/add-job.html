@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/grc_logo_green.png" type="image/png">
+    <script defer src="/js/validation.js"></script>
     <title>Add Job | Trades Job Board</title>
 </head>
 <body>
@@ -23,36 +24,36 @@
     <h1>Add Job</h1>
     <form id="add-job-form" action="/submit-job" method="post">
         <fieldset id="job-info">
-                <legend>Basic Information</legend>
-                <label for="title">
-                    Job Title
-                    <input type="text" id="title" name="title">
-                </label>
-                <label for="company">
-                    Company
-                    <input type="text" id="company" name="company">
-                </label>
-                <label for="location">
-                    Location
-                    <input type="text" id="location" name="location">
-                </label>
-                <label for="post_date">
-                    Post Date
-                    <input type="date" id="post_date" name="post_date">
-                </label>
-                <label for="close_date">
-                    Close Date
-                    <input type="date" id="close_date" name="close_date">
-                </label>
-                <label for="trade">
-                    Trade
-                    <select id="trade" name="trade">
-                        <option>Select a trade...</option>
-                        <option value="Automotive">Automotive</option>
-                        <option value="Carpentry">Carpentry</option>
-                        <option value="Mechatronics">Mechatronics</option>
-                    </select>
-                </label>
+            <legend>Basic Information</legend>
+            <label for="title">
+                Job Title
+                <input type="text" id="title" name="title" maxlength="100">
+            </label>
+            <label for="company">
+                Company
+                <input type="text" id="company" name="company" maxlength="100">
+            </label>
+            <label for="location">
+                Location
+                <input type="text" id="location" name="location" maxlength="100">
+            </label>
+            <label for="post_date">
+                Post Date
+                <input type="date" id="post_date" name="post_date">
+            </label>
+            <label for="close_date">
+                Close Date
+                <input type="date" id="close_date" name="close_date">
+            </label>
+            <label for="trade">
+                Trade
+                <select id="trade" name="trade">
+                    <option>Select a trade...</option>
+                    <option value="Automotive">Automotive</option>
+                    <option value="Carpentry">Carpentry</option>
+                    <option value="Mechatronics">Mechatronics</option>
+                </select>
+            </label>
         </fieldset>
         <fieldset id="job-type">
             <legend>Employment Type</legend>
@@ -80,16 +81,20 @@
         <fieldset id="additional-info">
             <legend>Additional information</legend>
             <label for="is_paid">
-                <input type="checkbox" id="is_paid">
+                <input type="checkbox" id="is_paid" name="is_paid">
                 This position is paid
             </label>
             <label for="compensation">
                 Compensation details (if applicable)
-                <input type="text" id="compensation" name="compensation">
+                <input type="text" id="compensation" name="compensation" maxlength="100">
+            </label>
+            <label for="posting_link">
+                Link to job posting on company's website
+                <input type="text" id="posting_link" name="posting_link" maxlength="250">
             </label>
             <label for="description">
                 Job description
-                <textarea id="description" name="description" rows="6" maxlength="400" placeholder="Briefly describe the role..."></textarea>
+                <textarea id="description" name="description" rows="6" maxlength="250" placeholder="Briefly describe the role..."></textarea>
             </label>
         </fieldset>
         <button type="submit" id="submit-job-button">Add Job</button>
