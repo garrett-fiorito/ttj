@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/grc_logo_green.png" type="image/png">
+    <title>View Job | Trades Job Board</title>
+</head>
+<body>
+    <header> 
+        <div class="header-title">
+            <img src="/img/grc_logo_white.png">
+            <h1>Green River Community College</h1>
+            <h1>Trades Job Board</h1>
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="/">All Jobs</a></li>
+                <li><a href="https://greenriver.edu/students/academics/areas-of-interest/program-maps/trades-industrial-tech-aviation-natural-resources/index.html" target="_blank">GRC Trades Page</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Job details</h1>
+    <h2><%= job.title %></h2>
+    <p>Company: <%= job.company %></p>
+    <p>Location: <%= job.location %></p>
+    <p>Post Date: <%= job.post_date %></p>
+    <p>Close Date: <%= job.close_date %></p>
+    <p>Trade: <%= job.trade %></p>
+    <p>Employment Type: <%= job.type%></p>
+    <p>Internship: <%= job.is_internship ? 'Yes' : 'No' %></p>
+    <p>Paid: <%= job.is_paid ? 'Yes' : 'No' %></p>
+    <% if (job.is_paid === 1) { %>
+        <p>Compensation: <%= job.compensation %></p>
+    <% } %>
+    <p>Description: <%= job.description %></p>
+    <% if (job.posting_link) { %>
+        <a href="https://<%= job.posting_link %>" target="_blank">Apply on company website</a>
+    <% } else { %>
+        <p>No external application link submitted.</p>
+    <% } %>
+</body>
+</html>
