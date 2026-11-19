@@ -5,63 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/grc_logo_green.png" type="image/png">
    
-    <script src="//code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="//cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/4.1.1/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="//cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.datatables.net/responsive/4.1.1/css/responsive.dataTables.min.css" rel="stylesheet">
- 
+
     <title>Home | Trades Job Board</title>
 </head>
 <body>
-    <header> 
-        <div class="header-title">
-            <img src="/img/grc_logo_white.png">
-            <h1>Green River Community College</h1>
-            <h1>Trades Job Board</h1>
-        </div>
-        <nav class="header-nav">
-            <ul>
-                <li><a href="/">All Jobs</a></li>
-                <li><a href="https://greenriver.edu/students/academics/areas-of-interest/program-maps/trades-industrial-tech-aviation-natural-resources/index.html" target="_blank">GRC Trades Page</a></li>
+    <nav class="navbar navbar-expand-lg navbar-bg">
+        <div class="container-fluid navbar-container d-flex flex-nowrap">
+            <a class="navbar-brand d-flex flex-column align-items-center justify-content-start nav-link" href="/">
+                <img src="/img/grc_logo_white.png" width="97px">
+                Trades Job Board
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-active" href="/">All Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/add-job">Add Job</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://greenriver.edu/students/academics/areas-of-interest/program-maps/trades-industrial-tech-aviation-natural-resources/index.html" target="_blank">GRC Trades Page</a>
+                </li>
             </ul>
-        </nav>
-    </header>
-    <table id="job-table" class="display">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Trade</th>
-                <th>Company</th>
-                <th>Location</th>
-                <th>Posting Date</th>
-                <th>Close Date</th>
-                <th>Employment Type</th>
-                <th>Internship</th>
-                <th>Paid</th>
-                <th>Compensation</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% jobs.forEach( job => { %>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <table id="job-table" class="display">
+            <thead>
                 <tr>
-                    <td><%= job.title %></td>
-                    <td><%= job.trade %></td>
-                    <td><%= job.company %></td>
-                    <td><%= job.location %></td>
-                    <td><%= job.post_date %></td>
-                    <td><%= job.close_date %></td>
-                    <td><%= job.type %></td>
-                    <td><%= job.internship ? 'Yes' : 'No' %></td>
-                    <td><%= job.is_paid ? 'Yes' : 'No' %></td>
-                    <td><%= job.compensation %></td>
-                    <td><a href='/view-job/<%= job.uuid %>'>View</a></td>
+                    <th>Title</th>
+                    <th>Trade</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Posting Date</th>
+                    <th>Close Date</th>
+                    <th>Employment Type</th>
+                    <th>Internship</th>
+                    <th>Paid</th>
+                    <th>Compensation</th>
+                    <th></th>
                 </tr>
-            <% }); %>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <% jobs.forEach( job => { %>
+                    <tr>
+                        <td><%= job.title %></td>
+                        <td><%= job.trade %></td>
+                        <td><%= job.company %></td>
+                        <td><%= job.location %></td>
+                        <td><%= job.post_date %></td>
+                        <td><%= job.close_date %></td>
+                        <td><%= job.type %></td>
+                        <td><%= job.internship ? 'Yes' : 'No' %></td>
+                        <td><%= job.is_paid ? 'Yes' : 'No' %></td>
+                        <td><%= job.compensation %></td>
+                        <td><a href='/view-job/<%= job.uuid %>'>View</a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
 </body>
 <script>
 

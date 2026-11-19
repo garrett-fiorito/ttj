@@ -1,0 +1,32 @@
+.navbar-bg {
+    overflow: hidden;
+}
+
+.navbar-container {
+    z-index: 1;
+    position: relative;
+}
+
+nav, .navbar-brand, .nav-link {
+    color:white;
+}
+
+.nav-link-active {
+    color: #418FDE;
+}
+
+.nav-link:hover, .nav-link:active, .nav-link:focus {
+    color: #2C882B;
+}
+
+.navbar-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/img/temp-header-bg.jpg');
+    filter: brightness(50%);
+    transform: scale(1.15);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
