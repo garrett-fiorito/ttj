@@ -7,7 +7,7 @@ function formSubmit(event) {
         let close_date = document.getElementById('close_date').value;
         let trade = document.getElementById('trade').value;
         trade = ! (trade == "Select a trade...");
-        let type = document.querySelector('#job-type > label > input:checked');
+        let type = document.querySelector('#job-type > div > input:checked');
 
         let errorElement = document.getElementById('err');
         let validationConditions = [title, company, location, post_date, close_date, trade, type];
